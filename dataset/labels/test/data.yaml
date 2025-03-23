@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['Prepare', 'Squat']
+
+roboflow:
+  workspace: hop-vzah8
+  project: squat-ntxfq-rpuz2
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/hop-vzah8/squat-ntxfq-rpuz2/dataset/1
