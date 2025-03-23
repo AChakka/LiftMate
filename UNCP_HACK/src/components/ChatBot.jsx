@@ -1,8 +1,12 @@
-// App.js
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 import './ChatBot.css';
 
 function ChatBot() {
+
+
+    const navigate = useNavigate();
+
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
@@ -61,8 +65,8 @@ function ChatBot() {
       
       if (data.choices && data.choices.length > 0) {
         const assistantMessage = {
-          role: 'assistant',
-          content: data.choices[0].message.content
+            role: 'assistant',
+            content: data.choices[0].message.content
         };
         setMessages((prevMessages) => [...prevMessages, assistantMessage]);
       } else {
@@ -73,7 +77,7 @@ function ChatBot() {
       setMessages((prevMessages) => [
         ...prevMessages,
         {
-          role: 'assistant',
+            role: 'assistant',
           content: 'Sorry, I encountered an error. Please try again.'
         }
       ]);
@@ -87,6 +91,9 @@ function ChatBot() {
       <header>
         <h1>Liftmate - Your Gym Buddy</h1>
       </header>
+            <button className="back-button" onClick={() => navigate('/')}>
+                  ⬅️ Back to LiftMate
+              </button>
       <div className="chat-container">
         <div className="messages">
           {messages.map((message, index) => (
@@ -123,6 +130,7 @@ function ChatBot() {
           </button>
         </form>
       </div>
+
     </div>
   );
 }

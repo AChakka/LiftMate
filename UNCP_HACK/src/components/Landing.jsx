@@ -3,18 +3,22 @@ import './Landing.css'
 import Typewriter from 'typewriter-effect';
 import GetStartedButton1 from './GetStartedButton1';
 import barbellIcon from '../assets/barbell-icon.svg';
+import leftBarbell from '../assets/leftBarbell.webp';
+import rightBarbell from '../assets/rightBarbell.webp';
+
 import BotButton from './BotButton';
 
 
 const Landing = () => {
+
   return (
     <div className='wrapper'>
         <div className="barbell-title-wrap">
-            <img src={barbellIcon} alt="barbell" className="barbell-icon" />
+            <img src={leftBarbell} alt="barbell" className="barbell-icon" />
             <h1 className="barbell-title-text">
                 <span className="lift-green">LIFT</span><span className="mate">MATE</span>
             </h1>
-            <img src={barbellIcon} alt="barbell" className="barbell-icon flipped" />
+            <img src={rightBarbell} alt="barbell" className="barbell-icon flipped" />
         </div>
 
 
