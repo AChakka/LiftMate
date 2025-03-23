@@ -6,7 +6,7 @@
 }
 
 .bot-button {
-  background-color: #1e1e1e;
+  background-color: transparent;
   border: none;
   border-radius: 10px;
   padding: 10px;
@@ -14,21 +14,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;     /* 👈 lock size */
-  height: 56px;
+  width: 50px;     /* 👈 lock size */
+  height: 50px;
   position: relative;
 }
 
 .bot-button svg {
-  width: 28px;     /* 👈 keep icon crisp, not stretched */
-  height: 28px;
+  width: 50px;     /* 👈 keep icon crisp, not stretched */
+  height: 50px;
   stroke: white;
 }
 
 .default-badge {
   position: absolute;
-  top: -4px;
-  right: -4px;
+  top: -1px;
+  right: 25px;
   background-color: red;
   color: white;
   font-size: 12px;

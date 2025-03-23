@@ -1,10 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+
 
 const GetStartedButton1 = () => {
+
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate('/camera');
+  };
+
+
   return (
     <StyledWrapper>
-      <button>
+      <button onClick={handleClick}>
         <span> Get Started! </span>
       </button>
     </StyledWrapper>

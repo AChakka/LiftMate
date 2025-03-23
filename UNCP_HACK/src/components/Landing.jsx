@@ -52,7 +52,7 @@ const Landing = () => {
                     >
                         <source src="/Squat_Video.mp4" type="video/mp4" />
                     </video>
-                    <p>Squats build strength in your quads, hamstrings, glutes, and posterior chain.</p>
+                    <p>Squats build strength in your quads, glutes, and posterior chain.</p>
                 </div>
 
                 <div
