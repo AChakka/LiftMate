@@ -37,7 +37,7 @@ The front end of LiftMate is built using React 18 with Vite, designed for perfor
 ## Live Feedback Panel: 
   Displays form breakdown, classification results, and guidance dynamically based on the AI's predictions.
 
-# LiftMate Chatbot
+## LiftMate Chatbot
 LiftMate features a custom AI-powered chatbot designed to provide friendly, real-time feedback to users. The chatbot helps correct posture, offers encouragement, and answers exercise-related queries.
 Built on OpenAI's GPT architecture for natural language interaction.
 Prompt engineering and behavior tuning were done by Agampreet Bajaj to give the bot a helpful yet motivating gym-bro tone.
