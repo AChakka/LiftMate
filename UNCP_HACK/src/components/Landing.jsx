@@ -3,6 +3,7 @@ import './Landing.css'
 import Typewriter from 'typewriter-effect';
 import GetStartedButton1 from './GetStartedButton1';
 import barbellIcon from '../assets/barbell-icon.svg';
+import BotButton from './BotButton';
 
 
 const Landing = () => {
@@ -93,6 +94,7 @@ const Landing = () => {
                 <GetStartedButton1/>
             </div>
         </div>
+        <BotButton/>
     </div>
   )
 }
