@@ -13,6 +13,9 @@ LiftMate is an AI-driven fitness application that utilizes YOLOv8 for real-time 
 ### 1. Object Detection and Classification
 LiftMate employs YOLO (You Only Look Once) specifically YOLOv8, a deep learning-based model optimized for real-time detection and classification tasks. Unlike traditional machine learning methods that rely on handcrafted features, YOLOv8 uses a Convolutional Neural Network (CNN) to learn spatial hierarchies of features from data automatically.
 
+*![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
+
+
 * Single-Stage Detection: YOLOv8 divides the image into a grid and predicts bounding boxes and class probabilities in a single pass, making it fast and efficient for real-time applications.
 * Feature Extraction: The model extracts patterns such as limb positions and posture differences to distinguish between exercises like squats, deadlifts, and bench presses.
 * <img width="1512" alt="Screenshot 2025-03-23 at 5 59 58 AM" src="https://github.com/user-attachments/assets/042bcca5-d137-4247-97fb-39272717cbb8" />
@@ -25,10 +28,14 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8, a deep learning-
 
 # Frontend and Chatbot Interaction
 The front end of LiftMate is built using React 18 with Vite, designed for performance and responsiveness. The layout is clean, intuitive, and optimized for real-time interaction between the user and the system. Core components include:
-## Split Layout Design: Divides the screen between real-time webcam analysis and feedback visualization.
-## Responsive UI: Fully responsive for both desktop and smaller viewports with accessibility-focused elements.
-## Webcam Integration: Streams the user’s movement directly into the YOLOv8 model for on-the-fly analysis.
-## Live Feedback Panel: Displays form breakdown, classification results, and guidance dynamically based on the AI's predictions.
+## Split Layout Design: 
+  Divides the screen between real-time webcam analysis and feedback visualization.
+## Responsive UI: 
+  Fully responsive for both desktop and smaller viewports with accessibility-focused elements.
+## Webcam Integration: 
+  Streams the user’s movement directly into the YOLOv8 model for on-the-fly analysis.
+## Live Feedback Panel: 
+  Displays form breakdown, classification results, and guidance dynamically based on the AI's predictions.
 
 # LiftMate Chatbot
 LiftMate features a custom AI-powered chatbot designed to provide friendly, real-time feedback to users. The chatbot helps correct posture, offers encouragement, and answers exercise-related queries.
