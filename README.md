@@ -39,7 +39,7 @@ The front end of LiftMate is built using React 18 with Vite, designed for perfor
 Web-Potato's silent-ape-24
 Hybaa's brown-liger-32
 
-## AI-Assisted Visualization & Model Polishing
+###  4. AI-Assisted Visualization & Model Polishing
 
 *![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
 
