@@ -23,7 +23,7 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8 which is a deep l
 
 * Classification Output: Based on the extracted features, YOLOv8 assigns probabilities to each exercise class and determines the most probable movement.
 
-## Contributer
+## Contributors
 * Kento Hopkins - Co-lead developer for Backend. Implemented Object Detection and Exercise Classification.
 * Adithya Chakka - Co-lead developer for Backend. Implemented Form Detection.
 * Agampreet Bajaj - Co-lead developer for Front-end and User Intractive Chatbot.
