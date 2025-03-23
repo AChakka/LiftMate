@@ -30,12 +30,11 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8, a deep learning-
 * 
 * *![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
 
-* ⚙️ Note: The final model tuning, visual debugging, and output polishing (including this keypoint heatmap) involved extensive AI-driven workflows. These included:
+### * ⚙️ Note: The final model tuning, visual debugging, and output polishing (including this keypoint heatmap) involved ChatGPT usage.
+### * These included:
 Rapid YOLOv8 retraining with assisted hyperparameter sweeps
-Skeleton overlay rendering using AI-accelerated post-processing tools
-Real-time validation feedback loops to meet strict development deadlines
-This hybrid AI-human loop helped optimize model performance while keeping the UI sleek and functional.
-Together, these designs ensure the user experience is both interactive and visually appealing while maintaining performance across devices.
+Skeleton overlay rendering on the front end
+Front-end components such as the webcam implementation and some styling
 
 ### 3. LiftMate Chatbot
 * LiftMate features a custom AI-powered chatbot designed to provide friendly, real-time feedback to users. The chatbot helps correct posture, offers encouragement, and answers exercise-related queries.
