@@ -1,25 +1,37 @@
 @font-face {
-  font-family: 'Granite-Bgvl';
-  src: url('./assets/font/Granite-Bgvl.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.wrapper {
+    font-family: 'Granite-Bgvl';
+    src: url('./assets/font/Granite-Bgvl.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    font-family: 'Granite-Bgvl', sans-serif;
+    background-color: #121212;
+  }
+  
+  .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
-    padding-top: 60px 40px;
-}
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+  }
   
-.barbell-title-wrap {
+  .barbell-title-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   
   .barbell-title-text {
@@ -27,41 +39,32 @@
     font-weight: 800;
     font-family: 'Granite', sans-serif;
     color: white;
+    margin: 0;
   }
   
-  .barbell-icon {
-    color: rgb(37, 150, 190);
-    transform: rotate(90deg); /* makes it look like a side plate */
-  }
-  
-  
-.title-text {
-    padding: 0 10px;
-    color: white;
-}  
-
-
-.typewriter {
-    margin-top: 80px;
+  .typewriter {
     font-size: 1.5rem;
     color: white;
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
+    margin: 10px auto 40px;
   }
   
-
-.exercise-sections {
-    margin-top: 70px;
+  .exercise-sections {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
     gap: 40px;
-    padding: 60px;
+    max-width: 1200px;
     width: 100%;
+    padding: 20px;
     box-sizing: border-box;
-}
+  }
   
-.exercise {
+  .exercise {
     flex: 1;
+    max-width: 340px;
     background-color: #1e1e1e;
     padding: 30px;
     border-radius: 12px;
@@ -72,34 +75,44 @@
     flex-direction: column;
     justify-content: space-between;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.exercise:hover {
+  }
+  
+  .exercise:hover {
     box-shadow: 0 0 20px 5px rgba(17, 173, 19, 0.7);
     transform: translateY(-5px);
-}
+  }
   
-.exercise h2 {
+  .exercise h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-}
+  }
   
-.exercise-media {
+  .exercise-media {
     height: 200px;
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #333;
     color: #ccc;
     font-style: italic;
-}
+  }
   
-.exercise p {
+  .exercise p {
     font-size: 1rem;
     margin-bottom: 20px;
-}
+  }
   
-.exercise button {
+  .exercise button {
     margin-top: auto;
-}
+  }
+  
+  .quote {
+    color: rgb(109, 255, 131);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 30px;
+    max-width: 800px;
+    padding: 10px 20px;
+  }
   

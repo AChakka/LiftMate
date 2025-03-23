@@ -55,12 +55,28 @@ const Landing = () => {
                     <GetStartedButton2 />
                 </div>
 
-                <div className="exercise">
+                <div
+                    className='exercise'
+                    onMouseEnter={() => document.getElementById('deadliftVideo').play()}
+                    onMouseLeave={() => document.getElementById('deadliftVideo').pause()}
+                    >
                     <h2>Deadlift</h2>
-                    <div className="exercise-media">[Deadlift Video]</div>
+                    <video
+                        id="deadliftVideo"
+                        className='exercise-media'
+                        width="100%"
+                        height="auto"
+                        muted
+                        loop
+                        preload="metadata"
+                    >
+                        <source src="/Deadlift_Video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                     <p>Deadlifts emphasize the posterior chain and grip strength.</p>
                     <GetStartedButton3 />
-                </div>
+                    </div>
+
         </div>
 
 
