@@ -24,8 +24,6 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8, a deep learning-
 
 * Classification Output: Based on the extracted features, YOLOv8 assigns probabilities to each exercise class and determines the most probable movement.
 
-*![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
-
 ### 2. Frontend
 The front end of LiftMate is built using React 18 with Vite, designed for performance and responsiveness. The layout is clean, intuitive, and optimized for real-time interaction between the user and the system. Core components include:
  * Split Layout Design: Divides the screen between real-time webcam analysis and feedback visualization.
@@ -35,12 +33,23 @@ The front end of LiftMate is built using React 18 with Vite, designed for perfor
 ### 3. LiftMate Chatbot
 * LiftMate features a custom AI-powered chatbot designed to provide friendly, real-time feedback to users. The chatbot helps correct posture, offers encouragement, and answers exercise-related queries.
 * Built on OpenAI's GPT architecture for natural language interaction.
-* Prompt engineering and behavior tuning were done by Agampreet Bajaj to give the bot a helpful yet motivating gym-bro tone.
+* Prompt engineering and behavior tuning was done by Agampreet Bajaj to give the bot a helpful yet motivating gym-bro tone.
 * The chatbot interface and next button UI were inspired by components from:
 
 Web-Potato's silent-ape-24
 Hybaa's brown-liger-32
 
+## AI-Assisted Visualization & Model Polishing
+
+*![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
+
+The keypoint-based pose visualization shown above was captured through the webcam interface using real-time inference. The rendering includes highlighted skeletal connections which indicate critical joints evaluated during form analysis.
+
+⚙️ Note: The final model tuning, visual debugging, and output polishing (including this keypoint heatmap) involved extensive AI-driven workflows. These included:
+Rapid YOLOv8 retraining with assisted hyperparameter sweeps
+Skeleton overlay rendering using AI-accelerated post-processing tools
+Real-time validation feedback loops to meet strict development deadlines
+This hybrid AI-human loop helped optimize model performance while keeping the UI sleek and functional.
 Together, these designs ensure the user experience is both interactive and visually appealing while maintaining performance across devices.
 
 ## Contributors
