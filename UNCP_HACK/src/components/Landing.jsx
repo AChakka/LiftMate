@@ -2,15 +2,18 @@ import React from 'react'
 import './Landing.css'
 import Typewriter from 'typewriter-effect';
 import GetStartedButton1 from './GetStartedButton1';
+import barbellIcon from '../assets/barbell-icon.svg';
 
 
 const Landing = () => {
   return (
     <div className='wrapper'>
         <div className="barbell-title-wrap">
+            <img src={barbellIcon} alt="barbell" className="barbell-icon" />
             <h1 className="barbell-title-text">
-                <span className='lift-green'>Lift</span>Mate
+                <span className="lift-green">LIFT</span><span className="mate">MATE</span>
             </h1>
+            <img src={barbellIcon} alt="barbell" className="barbell-icon flipped" />
         </div>
 
 
@@ -43,7 +46,6 @@ const Landing = () => {
                     preload="metadata"
                     >
                         <source src="/Squat_Video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
                     </video>
                     <p>Squats build strength in your quads, hamstrings, glutes, and posterior chain.</p>
                 </div>
@@ -64,7 +66,6 @@ const Landing = () => {
                         preload="metadata"
                     >
                         <source src="/Bench_Video.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
                     </video>
                     <p>Bench Press targets chest, triceps, and anterior delts.</p>
                 </div>
@@ -85,7 +86,6 @@ const Landing = () => {
                         preload="metadata"
                     >
                         <source src="/Deadlift_Video.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
                     </video>
                     <p>Deadlifts emphasize the posterior chain and grip strength.</p>
                 </div>
