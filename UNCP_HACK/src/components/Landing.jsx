@@ -2,14 +2,15 @@ import React from 'react'
 import './Landing.css'
 import Typewriter from 'typewriter-effect';
 import GetStartedButton1 from './GetStartedButton1';
-import GetStartedButton2 from './GetStartedButton2';
-import GetStartedButton3 from './GetStartedButton3';
+
 
 const Landing = () => {
   return (
     <div className='wrapper'>
         <div className="barbell-title-wrap">
-            <h1 className="barbell-title-text">LiftMate</h1>
+            <h1 className="barbell-title-text">
+                <span className='lift-green'>Lift</span>Mate
+            </h1>
         </div>
 
 
@@ -19,13 +20,13 @@ const Landing = () => {
                     strings: [
                         'Hey there! This is your personal virtual lifting buddy.',
                         "Let's start you off with Squats, Deadlifts, or Bench Press!",
-                        'Fun Fact! These are the also known as the Powerlifting Big 3.'
+                        'Select one of these compound movements, and we will analyze your form!'
                     ],
                     autoStart: true,
                     loop: true,
                     delay: 50,
-                    deleteSpeed: 30,
-                    pauseFor: 2000
+                    deleteSpeed: 40,
+                    pauseFor: 1500
                 }}
             />
         </div>
@@ -45,7 +46,6 @@ const Landing = () => {
                     Your browser does not support the video tag.
                     </video>
                     <p>Squats build strength in your quads, hamstrings, glutes, and posterior chain.</p>
-                    <GetStartedButton1 />
                 </div>
 
                 <div
@@ -53,7 +53,7 @@ const Landing = () => {
                     onMouseEnter={() => document.getElementById('benchVideo').play()}
                     onMouseLeave={() => document.getElementById('benchVideo').pause()}
                     >
-                    <h2>Deadlift</h2>
+                    <h2>Bench Press</h2>
                     <video
                         id="benchVideo"
                         className='exercise-media'
@@ -67,7 +67,6 @@ const Landing = () => {
                         Your browser does not support the video tag.
                     </video>
                     <p>Bench Press targets chest, triceps, and anterior delts.</p>
-                    <GetStartedButton3 />
                 </div>
 
                 <div
@@ -89,15 +88,10 @@ const Landing = () => {
                         Your browser does not support the video tag.
                     </video>
                     <p>Deadlifts emphasize the posterior chain and grip strength.</p>
-                    <GetStartedButton3 />
                 </div>
-
-        </div>
-
-
-        <div className='quote'>
-        "The resistance that you fight physically in the gym and the resistance that you 
-            fight in life can only build a strong character."" <br /> - Arnold Schwarzenegger
+            <div className='exercise-button'>
+                <GetStartedButton1/>
+            </div>
         </div>
     </div>
   )

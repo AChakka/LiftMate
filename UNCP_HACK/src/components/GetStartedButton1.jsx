@@ -14,8 +14,8 @@ const GetStartedButton1 = () => {
 const StyledWrapper = styled.div`
   button {
     padding: 0.1em 0.25em;
-    width: 13em;
-    height: 4.2em;
+    width: 16em;
+    height: 5em;
     background-color: #212121;
     border: 0.08em solid #fff;
     border-radius: 0.3em;
@@ -29,11 +29,11 @@ const StyledWrapper = styled.div`
     justify-content: center;
     align-items: center;
     bottom: 0.4em;
-    width: 8.25em;
-    height: 2.5em;
+    width: 10em;
+    height: 3em;
     background-color: #212121;
     border-radius: 0.2em;
-    font-size: 1.5em;
+    font-size: 1.7em;
     color: #fff;
     border: 0.08em solid #fff;
     box-shadow: 0 0.4em 0.1em 0.019em #fff;

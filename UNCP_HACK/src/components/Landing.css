@@ -1,17 +1,13 @@
-@font-face {
-    font-family: 'Granite-Bgvl';
-    src: url('./assets/font/Granite-Bgvl.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+
   body, html {
     margin: 0;
     padding: 0;
     overflow: hidden;
     height: 100vh;
     font-family: 'Granite-Bgvl', sans-serif;
-    background-color: #121212;
+    background-color: #414141;
   }
   
   .wrapper {
@@ -35,11 +31,15 @@
   }
   
   .barbell-title-text {
-    font-size: 3.5rem;
+    font-size: 7rem;
     font-weight: 800;
-    font-family: 'Granite', sans-serif;
+    font-family: 'Staatliches', sans-serif;
     color: white;
     margin: 0;
+  }
+
+  .lift-green {
+    color: rgba(17, 173, 19, 0.7);
   }
   
   .typewriter {
@@ -60,6 +60,15 @@
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
+  }
+
+  .exercise-button {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
   }
   
   .exercise {
@@ -88,15 +97,14 @@
   }
   
   .exercise-media {
+    width: 100%;
     height: 200px;
+    object-fit: contain;
+    border: none;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #333;
-    color: #ccc;
-    font-style: italic;
+    background-color: transparent;
   }
+  
   
   .exercise p {
     font-size: 1rem;
