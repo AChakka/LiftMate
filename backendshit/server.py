@@ -102,14 +102,14 @@ class FormAnalyzer:
                 feedback["issues"].append("Hips are not level. Balance your weight evenly.")
             
             if abs(knee_angle_left - knee_angle_right) > 30:
-                feedback["issues"].append("Knees are not tracking evenly. Ensure even weight distribution.")
+                feedback["issues"].append("Knees are not going evenly Ensure even weight distribution.")
             
             shoulder_y = (left_shoulder[1] + right_shoulder[1]) / 2
             hip_y = (left_hip[1] + right_hip[1]) / 2
             knee_y = (left_knee[1] + right_knee[1]) / 2
             
             if (knee_y <= hip_y - 20):
-                feedback["issues"].append("Not squatting deep enough. Lower your hips below your knees.")
+                feedback["issues"].append("Not squatting deep enough Lower your hips below your knees.")
             
             if len(feedback["issues"]) > 3:
                 feedback["overall"] = "poor"
@@ -123,7 +123,7 @@ class FormAnalyzer:
             }
             
         except (ValueError, IndexError) as e:
-            feedback["issues"].append(f"Could not detect all necessary joints: {str(e)}")
+            feedback["issues"].append(f"Couldnt detect all necessary joints: {str(e)}")
             feedback["overall"] = "unknown"
         
         return feedback
@@ -383,7 +383,6 @@ def classify_exercise():
         except Exception as e:
             return jsonify({"error": f"Invalid image data: {str(e)}"}), 400
         
-        # Classify the exercise
         classification = exercise_classifier.classify_exercise(image_np)
         
         response = {
