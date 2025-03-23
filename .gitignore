@@ -40,9 +40,7 @@ Thumbs.db
 # Jupyter Notebooks
 .ipynb_checkpoints
 
-# PyTorch models (potentially large)
-*.pt
-*.pth
+=
 
 # Temporary files
 temp/

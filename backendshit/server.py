@@ -10,7 +10,7 @@ import time
 import os
 import uuid
 import sys
-
+from ultralytics import YOLO
 
 app = Flask(__name__)
 CORS(app)  
@@ -133,6 +133,67 @@ class FormAnalyzer:
             return self.analyze_squat_form(keypoints)
         else:
             return {"issues": [f"Exercise type '{exercise_type}' not supported"], "overall": "unknown"}
+
+class ExerciseClassifier:
+    def __init__(self):
+        print("Loading exercise classification model...")
+        try:
+            self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            print(f"Using device: {self.device}")
+            
+            # Load the classification model
+            self.model = YOLO(r"C:\Users\adith\LiftMate-1\backendshit\runs\classify\train\weights\best.pt")
+            
+            if self.device == 'cuda':
+                self.model.to('cuda')
+            
+            self.model_loaded = True
+            self.class_names = ["DeadLift", "Squat", "Standing"]
+            print("Classification model loaded successfully")
+        except Exception as e:
+            print(f"Error loading classification model: {e}")
+            print("Falling back to mock data for development")
+            self.model = None
+            self.model_loaded = False
+            self.device = 'cpu'
+            self.class_names = ["DeadLift", "Squat", "Standing"]
+    
+    def classify_exercise(self, image):
+        if self.model_loaded:
+            try:
+                # Run inference with the model
+                results = self.model(image, verbose=False)
+                
+                if results and len(results) > 0:
+                    # Get the predicted class and confidence
+                    probs = results[0].probs
+                    top_class_idx = int(probs.top1)
+                    confidence = float(probs.top1conf)
+                    
+                    # Get the class name
+                    class_name = self.class_names[top_class_idx]
+                    
+                    # Get confidence scores for all classes
+                    all_confidences = {}
+                    for i, conf in enumerate(probs.data.tolist()):
+                        all_confidences[self.class_names[i]] = round(float(conf) * 100, 2)
+                    
+                    return {
+                        "exercise": class_name,
+                        "confidence": round(confidence * 100, 2),
+                        "all_confidences": all_confidences
+                    }
+                else:
+                    print("No valid results from classification model")
+            except Exception as e:
+                print(f"Error during classification: {e}")
+        
+        # Return fallback data if model fails or isn't loaded
+        return {
+            "exercise": "Unknown",
+            "confidence": 0.0,
+            "all_confidences": {name: 0.0 for name in self.class_names}
+        }
 
 
 class PoseEstimator:
@@ -294,6 +355,49 @@ active_sessions = {}
 pose_estimator = PoseEstimator()
 form_analyzer = FormAnalyzer()
 
+
+exercise_classifier = ExerciseClassifier()
+
+@app.route("/classify_exercise", methods=["POST"])
+def classify_exercise():
+    try:
+        data = request.json
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
+        
+        image_b64 = data.get("image")
+        
+        if not image_b64:
+            return jsonify({"error": "No image provided"}), 400
+        
+        try:
+            if "base64," in image_b64:
+                image_b64 = image_b64.split("base64,")[1]
+            
+            image_data = base64.b64decode(image_b64)
+            image = Image.open(BytesIO(image_data))
+            image_np = np.array(image)
+            
+            if image_np.shape[2] == 3:
+                image_np = cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB)
+        except Exception as e:
+            return jsonify({"error": f"Invalid image data: {str(e)}"}), 400
+        
+        # Classify the exercise
+        classification = exercise_classifier.classify_exercise(image_np)
+        
+        response = {
+            "classification": classification,
+            "timestamp": time.time()
+        }
+        
+        return jsonify(response)
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+
 @app.route("/health", methods=["GET"])
 def health_check():
     return jsonify({"status": "ok", "timestamp": time.time()})
@@ -380,9 +484,11 @@ def end_session(session_id):
 @app.route("/version", methods=["GET"])
 def version():
     return jsonify({
-        "api_version": "0.2.0",
+        "api_version": "0.3.0",
         "model_version": "YOLOv11-placeholder",
-        "supported_exercises": ["squat"]
+        "classifier_version": "LiftMate-classifier-v1",
+        "supported_exercises": ["squat"],
+        "supported_classifications": ["DeadLift", "Squat", "Standing"]
     })
 
 if __name__ == "__main__":
