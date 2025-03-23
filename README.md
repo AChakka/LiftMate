@@ -23,8 +23,26 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8, a deep learning-
 
 * Classification Output: Based on the extracted features, YOLOv8 assigns probabilities to each exercise class and determines the most probable movement.
 
+# Frontend and Chatbot Interaction
+The front end of LiftMate is built using React 18 with Vite, designed for performance and responsiveness. The layout is clean, intuitive, and optimized for real-time interaction between the user and the system. Core components include:
+## Split Layout Design: Divides the screen between real-time webcam analysis and feedback visualization.
+## Responsive UI: Fully responsive for both desktop and smaller viewports with accessibility-focused elements.
+## Webcam Integration: Streams the user’s movement directly into the YOLOv8 model for on-the-fly analysis.
+## Live Feedback Panel: Displays form breakdown, classification results, and guidance dynamically based on the AI's predictions.
+
+# LiftMate Chatbot
+LiftMate features a custom AI-powered chatbot designed to provide friendly, real-time feedback to users. The chatbot helps correct posture, offers encouragement, and answers exercise-related queries.
+Built on OpenAI's GPT architecture for natural language interaction.
+Prompt engineering and behavior tuning were done by Agampreet Bajaj to give the bot a helpful yet motivating gym-bro tone.
+The chatbot interface and next button UI were inspired by components from:
+
+Web-Potato's silent-ape-24
+Hybaa's brown-liger-32
+
+Together, these designs ensure the user experience is both interactive and visually appealing while maintaining performance across devices.
+
 ## Contributors
 * Kento Hopkins - Co-lead developer for Backend. Implemented Object Detection and Exercise Classification.
 * Adithya Chakka - Co-lead developer for Backend. Implemented Form Detection.
-* Agampreet Bajaj - Co-lead developer for Front-end and User Intractive Chatbot.
+* Agampreet Bajaj - Co-lead developer for Front-end and User Interactive Chatbot.
 * Henry Greene - Co-lead developer for Frontend and Visualization.
