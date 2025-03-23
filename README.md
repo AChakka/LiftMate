@@ -26,9 +26,9 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8, a deep learning-
 
 ###  2. AI-Assisted Visualization & Model Polishing
 
-*![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
-
 * The keypoint-based pose visualization shown above was captured through the webcam interface using real-time inference. The rendering includes highlighted skeletal connections which indicate critical joints evaluated during form analysis.
+* 
+* *![image](https://github.com/user-attachments/assets/8e88b2e7-011e-4965-b7da-bc89afb07fc9)
 
 * ⚙️ Note: The final model tuning, visual debugging, and output polishing (including this keypoint heatmap) involved extensive AI-driven workflows. These included:
 Rapid YOLOv8 retraining with assisted hyperparameter sweeps
