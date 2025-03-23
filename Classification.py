@@ -1,3 +1,5 @@
+import cv2
+import torch
 from ultralytics import YOLO
 
 # Load a COCO-pretrained YOLO8n model
