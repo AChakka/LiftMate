@@ -15,4 +15,5 @@ LiftMate employs YOLO (You Only Look Once) specifically YOLOv8 which is a deep l
 
 * Single-Stage Detection: YOLOv8 divides the image into a grid and predicts bounding boxes and class probabilities in a single pass, making it fast and efficient for real-time applications.
 * Feature Extraction: The model extracts patterns such as limb positions and posture differences to distinguish between exercises like squats, deadlifts, and bench presses.
+/Users/kentohopkins/Desktop/Screenshot 2025-03-23 at 6.00.20 AM.png
 * Classification Output: Based on the extracted features, YOLOv8 assigns probabilities to each exercise class and determines the most probable movement.
