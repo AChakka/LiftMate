@@ -3,7 +3,7 @@ import torch
 from ultralytics import YOLO
 
 # Load the trained classification model
-model = YOLO("/Users/kentohopkins/Desktop/LiftMate/dataset/Excersise/runs/classify/train2/weights/best.pt")  # Update path
+model = YOLO("/Users/kentohopkins/Desktop/LiftMate/runs/classify/train/weights/best.pt")  # Update path
 
 # Open webcam (0 is the default webcam)
 cap = cv2.VideoCapture(0)
