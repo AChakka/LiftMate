@@ -48,11 +48,26 @@ const Landing = () => {
                     <GetStartedButton1 />
                 </div>
 
-                <div className="exercise">
-                    <h2>Bench Press</h2>
-                    <div className="exercise-media">[Bench Video]</div>
+                <div
+                    className='exercise'
+                    onMouseEnter={() => document.getElementById('benchVideo').play()}
+                    onMouseLeave={() => document.getElementById('benchVideo').pause()}
+                    >
+                    <h2>Deadlift</h2>
+                    <video
+                        id="benchVideo"
+                        className='exercise-media'
+                        width="100%"
+                        height="auto"
+                        muted
+                        loop
+                        preload="metadata"
+                    >
+                        <source src="/Bench_Video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                     <p>Bench Press targets chest, triceps, and anterior delts.</p>
-                    <GetStartedButton2 />
+                    <GetStartedButton3 />
                 </div>
 
                 <div
@@ -75,7 +90,7 @@ const Landing = () => {
                     </video>
                     <p>Deadlifts emphasize the posterior chain and grip strength.</p>
                     <GetStartedButton3 />
-                    </div>
+                </div>
 
         </div>
 
