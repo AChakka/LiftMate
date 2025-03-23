@@ -87,11 +87,11 @@ class FormAnalyzer:
             torso_angle = (torso_angle_left + torso_angle_right) / 2
             
             if abs(hip_angle - self.ideal_angles["squat"]["hip"]) > self.angle_thresholds["squat"]["hip"]:
-                feedback["issues"].append("Your Hip angle is incorrect FIX IT NOW.")
+                feedback["issues"].append("Your Hip angle is could use some work.")
             
             if abs(knee_angle - self.ideal_angles["squat"]["knee"]) > self.angle_thresholds["squat"]["knee"]:
                 if knee_angle < self.ideal_angles["squat"]["knee"]:
-                    feedback["issues"].append(" Your Knees are bending too much. Don't go so DEEP.")
+                    feedback["issues"].append("Don't cave in your Knees.")
                 else:
                     feedback["issues"].append("Knees are not bending enough. Lower your squat position.")
             
@@ -141,7 +141,7 @@ class ExerciseClassifier:
             self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
             print(f"Using device: {self.device}")
             
-            # Load the classification model
+            
             self.model = YOLO(r"C:\Users\adith\LiftMate-1\backendshit\runs\classify\train\weights\best.pt")
             
             if self.device == 'cuda':
@@ -161,19 +161,19 @@ class ExerciseClassifier:
     def classify_exercise(self, image):
         if self.model_loaded:
             try:
-                # Run inference with the model
+             
                 results = self.model(image, verbose=False)
                 
                 if results and len(results) > 0:
-                    # Get the predicted class and confidence
+                 
                     probs = results[0].probs
                     top_class_idx = int(probs.top1)
                     confidence = float(probs.top1conf)
                     
-                    # Get the class name
+                   
                     class_name = self.class_names[top_class_idx]
                     
-                    # Get confidence scores for all classes
+                    
                     all_confidences = {}
                     for i, conf in enumerate(probs.data.tolist()):
                         all_confidences[self.class_names[i]] = round(float(conf) * 100, 2)
@@ -188,7 +188,7 @@ class ExerciseClassifier:
             except Exception as e:
                 print(f"Error during classification: {e}")
         
-        # Return fallback data if model fails or isn't loaded
+        
         return {
             "exercise": "Unknown",
             "confidence": 0.0,
