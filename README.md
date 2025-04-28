@@ -1,7 +1,7 @@
 # LiftMate: AI-Powered Exercise Assistant
 ## Overview
 LiftMate is an AI-driven fitness application that utilizes YOLOv8 for real-time classification of weightlifting exercises and form detection to help prevent serious injuries. The model is designed to detect and analyze the “Big 3” exercises—bench press, deadlift, and squat—providing users with immediate feedback to improve their technique.
-
+**Video Demo** : https://www.youtube.com/watch?v=u9aoDglgpfk
 ## Features
 * Real-time Exercise Classification: Detects whether the user performs a squat or a deadlift.
 * Form Analysis: Provides insights on posture and hand placement.
